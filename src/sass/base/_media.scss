@@ -1,4 +1,4 @@
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
     .header{
         &__wrapper {
             flex-wrap: wrap;
@@ -43,6 +43,13 @@
                 .advantages__box-image {
                     flex-basis: unset;
                 }
+            }
+        }
+    }
+    .masters {
+        &__item {
+            &-info {
+                height: 195px;
             }
         }
     }
@@ -123,6 +130,22 @@
                 max-width: 222px;
             }
         }
+    }
+    .masters {
+        &__item {
+            max-width: 100%;
+            &-figure {
+                max-width: 100%;
+            }
+            &-info {
+                text-align: center;
+                height: auto;
+            }
+        }
+        &__actions {
+                display: none;
+        }
+        
     }
 }
   

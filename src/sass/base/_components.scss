@@ -61,8 +61,8 @@
     align-items: center;
     justify-content: center;
     padding: 18px;
-    height: 72px;
-    width: 262px;
+    height: 50px;
+    width: 240px;
     background-color: var(--color-accent);
     line-height: 1.2;
     font-weight: 500;
@@ -92,11 +92,24 @@
 }
 
 .border-box {
+    position: relative;
     padding: 30px;
     border: var(--border-box);
+    box-shadow: var(--box-shadow);
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        box-shadow: inset var(--box-shadow);
+        z-index: -1;
+    }
 }
 .title-accent {
     font-size: clamp(16px, 1.33vw, 20px);
     line-height: 1;
     color: var(--color-accent);
+}
+.title {
+    font-size: clamp(20px, 2vw, 30px);
+    line-height: 1;
 }

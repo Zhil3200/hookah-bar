@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: clamp(30px, 4vw, 60px);
+    padding-bottom: clamp(100px, 10.07vw, 151px);
     &__box {
         display: flex;
         gap: 45px;
