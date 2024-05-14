@@ -1,0 +1,128 @@
+@media (max-width: 1023px) {
+    .header{
+        &__wrapper {
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+        &__menu {
+            order: 1;
+            justify-content: flex-end;
+            width: 100%;
+        }
+        &__time {
+            margin-left: unset;
+        }
+        &__phone {
+            margin-left: unset;
+        }
+    }
+    .promo {
+        grid-template-columns: repeat(2, 1fr);
+        &__figure {
+            &-extra-img {
+                right: 0;
+                bottom: 175px;
+            }  
+        }
+    }
+    .advantages {
+        &__box {
+            flex-direction: column;
+            &-image {
+                flex-basis: unset;
+                max-height: 186px;
+                img {
+                    height: 118px;
+                }
+            }
+            &:nth-child(2), &:nth-child(3) {
+                height: auto;
+                grid-column: unset;
+                grid-row: unset;
+                .advantages__box-image {
+                    flex-basis: unset;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 767px) {
+    .advantages {
+        grid-template-columns: 1fr;
+        &__box {
+            text-align: center;
+            &-image {
+                order: 1;
+            }
+        }
+        &__extra {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .header {
+        padding-block: 20px;
+        &__wrapper {
+            position: absolute;
+            top: -420px;
+            right: 0;
+            background-color: var(--color-accent);
+            flex-direction: column;
+            margin-left: unset;
+            padding: 60px 20px;
+            width: 229px;
+            align-items: start;
+            gap: 20px;
+            box-shadow: 0 0 0 0 var(--color-accent);
+            opacity: 0;
+            visibility: hidden;
+            transition-duration: var(--transition-duration);
+            &.active {
+                top: 0;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &__menu {
+            order: 0;
+            justify-content: start;
+            margin-bottom: 40px;
+            &-list {
+                flex-direction: column;
+                row-gap: 20px;
+            }
+        }
+        &__phone {
+            padding-left: 36px;
+            &::before {
+                background: url('../assets/icons/phone-call-white.png') center / contain no-repeat;
+                width: 26px;
+                top: 0;
+            }
+            &-link {
+                color: var(--color-white);
+                text-shadow: unset;
+            }
+        }
+    }
+    .burger {
+        display: inline-flex;
+    }
+    .promo {
+        padding-top: 30px;
+        grid-template-columns: 1fr;
+        text-align: center;
+        &__figure {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            justify-content: center;
+            &-extra-img {
+                max-width: 222px;
+            }
+        }
+    }
+}
+  

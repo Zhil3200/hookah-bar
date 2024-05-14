@@ -1,0 +1,77 @@
+.header {
+    // position: sticky;
+    top: 0;
+    padding-block: 33px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    &__overlay {
+        width: 100%;
+        transition-duration: var(--transition-duration);
+        background-color: transparent;
+        &.active {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(160, 160, 160, .2);
+            z-index: 100;
+        }
+    }
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        margin-left: clamp(30px, 6.51vw, 125px);
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            column-gap: min(50px, 6vw);
+        }
+        &-link {
+            padding-block: 15px;
+            &:hover {
+                text-shadow: var(--text-shadow);
+            }
+        }
+    }
+    &__time {
+        margin-left: clamp(30px, 6.51vw, 125px);
+        display: inline-flex;
+        align-items: start;
+        column-gap: 10px;
+        &::before {
+            content: '';
+            width: 25px;
+            aspect-ratio: 1;
+            background: url('../assets/icons/clock.png') center / contain no-repeat;
+            margin-top: 3px;
+        }
+    }
+    &__phone {
+        margin-left: auto;
+        padding-left: 47px;
+        position: relative;
+        line-height: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -7px;
+            width: 40px;
+            aspect-ratio: 1;
+            background: url('../assets/icons/phone-call.png') center / contain no-repeat;
+        }
+        &-link {
+            display: block;
+            color: #621dc4;
+            margin-bottom: 9px;
+            text-shadow: var(--text-shadow);
+          }
+        &-descr {
+            display: block;
+        }
+    }
+}
+  

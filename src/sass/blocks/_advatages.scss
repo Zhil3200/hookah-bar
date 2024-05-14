@@ -1,0 +1,33 @@
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(30px, 4vw, 60px);
+    &__box {
+        display: flex;
+        gap: 45px;
+        &-image {
+            flex-basis: 196px;
+            flex-shrink: 0;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &:nth-child(2) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+            flex-direction: column;
+            height: 405px;
+        }
+        &:nth-child(3) {
+            grid-row: 2 / 4;
+            .advantages__box-image {
+                flex-basis: 170px;
+            }
+        }
+        &-title {
+            margin-bottom: 20px;
+        }
+    }
+}

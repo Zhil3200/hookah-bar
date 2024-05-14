@@ -1,0 +1,102 @@
+.logo {
+    flex-shrink: 0;
+}
+
+.burger {
+    position: relative;
+    border: 0;
+    margin-left: auto;
+    padding: 10px;
+    right: -10px;
+    top: -10px;
+    background-color: transparent;
+    height: 36px;
+    display: none;
+    align-items: center;
+    align-self: flex-start;
+    cursor: pointer;
+    color: var(--color-accent);
+    z-index: 100;
+    &__line {
+        position: relative;
+        background-color: currentColor;
+        width: 21px;
+        height: 2px;
+        transition-duration: var(--transition-duration);
+        &:after, &:before {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            translate: -50% 0;
+            width: 21px;
+            height: 2px;
+            background-color: currentColor;
+            transition-duration: var(--transition-duration);
+        }
+        &:before {
+            top: -4px;
+        }
+    }
+    &.active {
+        .burger__line {
+            background-color: transparent;
+            &:after {
+                rotate: -45deg;
+                top: 0;
+                background-color: var(--color-white);
+            }
+            &:before {
+                rotate: 45deg;
+                top: 0;
+                background-color: var(--color-white);
+            }
+        }
+    }
+}
+
+.button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    height: 72px;
+    width: 262px;
+    background-color: var(--color-accent);
+    line-height: 1.2;
+    font-weight: 500;
+    transition-duration: var(--transition-duration);
+    overflow: hidden;
+    color: var(--color-white);
+    &:hover {
+        color: currentColor;
+        box-shadow: var(--box-shadow);
+        rotate: 3deg;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 100%;
+        background-image: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0) 70%
+        );
+        top: 0;
+        left: -100px;
+        animation: shine 2s infinite linear;
+    }
+}
+
+.border-box {
+    padding: 30px;
+    border: var(--border-box);
+}
+.title-accent {
+    font-size: clamp(16px, 1.33vw, 20px);
+    line-height: 1;
+    color: var(--color-accent);
+}
