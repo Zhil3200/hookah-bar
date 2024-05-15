@@ -1,0 +1,49 @@
+.carte {
+    padding-bottom: clamp(100px, 13.42vw, 153px);
+    &__tabs {
+        margin-top: 42px;
+        &-nav {
+            display: flex;
+            column-gap: 40px;
+            overflow-y: hidden;
+            overflow-x: auto;
+        }
+        &-item {
+            position: relative;
+            white-space: nowrap;
+            padding-bottom: 10px;
+            cursor: pointer;
+            &::after {
+                content: '';
+                border-bottom: 1px solid var(--color-accent);
+                position: absolute;
+                bottom: 9px;
+                left: 0;
+                width: 0%;
+                height: 1px;
+                transition-duration: var(--transition-duration);
+            }
+            &.active {
+                &::after {
+                    width: 100%;
+                    box-shadow: 0px 0px 7px 2px var(--color-accent);
+                }
+            }
+        }
+        &-content {
+            margin-top: clamp(27px, 5.26vw, 50px);
+        }
+    }
+}
+@media (hover: hover) {
+    .carte__tabs-item:hover {
+        text-shadow: var(--text-shadow);
+        transition-duration: var(--transition-duration);
+    }
+}
+@media (hover: none) {
+    .carte__tabs-item:active {
+        color: var(--color-accent);
+        transition-duration: var(--transition-duration);
+    }
+}

@@ -6,7 +6,7 @@ body {
     font-size: 15px;
     line-height: 1.333;
     color: var(--color-white);
-    background-color: var(--color-dark);
+    background: var(--color-dark);
 }
 a, button, input, svg * {
     transition-duration: var(--transition-duration);
