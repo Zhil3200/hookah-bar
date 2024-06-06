@@ -1,0 +1,13 @@
+.discounts {
+    padding-bottom: clamp(101px, 9.93vw, 149px);
+    &__descr {
+        max-width: 306px;
+        margin-block: 20px 61px;
+    }
+    &__img {
+        width: 348px;
+        height: 200px;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+}

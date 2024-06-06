@@ -11,9 +11,10 @@ body {
 a, button, input, svg * {
     transition-duration: var(--transition-duration);
 }
-a {
+a, button {
     color: var(--color-white);
     text-decoration: none;
+    border: 0;
 }
 @media (hover: hover) {
     a:hover {
