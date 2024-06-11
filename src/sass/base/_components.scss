@@ -69,11 +69,6 @@
     transition-duration: var(--transition-duration);
     overflow: hidden;
     color: var(--color-white);
-    &:hover {
-        color: currentColor;
-        box-shadow: var(--box-shadow);
-        rotate: 3deg;
-    }
     &::before {
         content: "";
         position: absolute;
@@ -88,6 +83,46 @@
         top: 0;
         left: -100px;
         animation: shine 2s infinite linear;
+    }
+}
+
+@media (hover: hover) {
+    .button:hover {
+        color: currentColor;
+        box-shadow: var(--box-shadow);
+        rotate: 3deg;
+    }
+}
+@media (hover: none) {
+    .button:active {
+        color: currentColor;
+        box-shadow: var(--box-shadow);
+        rotate: 3deg;
+    }
+}
+
+.phone {
+    padding-left: 47px;
+    position: relative;
+    line-height: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -7px;
+        width: 40px;
+        aspect-ratio: 1;
+        background: url('../assets/icons/phone-call.png') center / contain no-repeat;
+        animation: zag 2s infinite;
+    }
+    &__link {
+        display: block;
+        color: #621dc4;
+        margin-bottom: 9px;
+        text-shadow: var(--text-shadow);
+      }
+    &__descr {
+        display: block;
     }
 }
 

@@ -5,7 +5,11 @@
         padding-block: 69px 62px;
     }
     &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         max-width: 570px;
+        min-height: 370px;
         margin-inline: auto;
         padding: 30px clamp(20px, 8vw, 98px);
         background-color: var(--color-dark);
@@ -41,6 +45,16 @@
             line-height: 1.364;
             opacity: 0.5;
         }
+    }
+    &__error {
+        color: var(--color-error);
+        margin: -15px 0 0 15px;
+        display: none;
+    }
+    &__success {
+        text-align: center;
+        font-size: 25px;
+        display: none;
     }
 }
   

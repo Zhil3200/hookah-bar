@@ -1,0 +1,19 @@
+.footer {
+    padding-bottom: clamp(55px, 4.87vw, 73px);
+    &__wrapper {
+        display: flex;
+        gap: 36px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 40px 45px;
+    }
+    &__rights {
+        font-size: 13px;
+        margin-top: 28px;
+        color: rgb(147, 147, 147);
+    }
+}

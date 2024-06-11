@@ -1,0 +1,50 @@
+.contacts {
+    padding-bottom: clamp(126px, 10.87vw, 163px);
+    &__wrapper {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        gap: clamp(45px, 4vw, 60px);
+    }
+    &__map {
+        width: clamp(50%, 43vw, 645px);
+        height: 375px;
+        flex-shrink: 0;
+    }
+    &__info {
+        width: clamp(225px, 19.33vw, 290px);;
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+    &__text {
+        font-style: normal;
+        margin-top: 20px;
+        text-wrap: balance;
+        &:not(address) {
+            font-size: 14px;
+            line-height: 1.286;
+        }
+    }
+    &__social {
+        display: inline-flex;
+        gap: 18px;
+        margin-top: clamp(15px, 1.33vw, 20px);
+        a {
+            width: 26px;
+            aspect-ratio: 1;
+            &:nth-child(2) {
+                width: 36px;
+                margin-top: -4px;
+            }
+            svg {
+                transition-duration: 0.5s;
+            }
+            &:hover svg {
+                opacity: .9;
+                rotate: 360deg;
+            }
+        }
+    }
+}
+  

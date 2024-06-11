@@ -18,11 +18,14 @@
         position: relative;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
         &-extra-img {
             position: absolute;
             bottom: 83px;
-            right: -205px;
+            right: -175px;
+        }
+        &-main-img {
+            z-index: 1; 
         }
         &-promotion {
             --size: clamp(115px, 9vw, 135px);
@@ -40,6 +43,7 @@
             text-align: center;
             font-size: clamp(13px, 0.93vw, 14px);
             box-shadow: var(--box-shadow);
+            z-index: 1;
             &::before {
                 content: '';
                 position: absolute;
@@ -47,6 +51,7 @@
                 aspect-ratio: 1;
                 border-radius: 50%;
                 border: 2px dashed var(--color-white);
+                animation: rotate 10s linear infinite;
             }
         }
     }

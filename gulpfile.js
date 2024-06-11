@@ -6,10 +6,6 @@ const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 const htmlmin = require('gulp-htmlmin');
 const sourcemaps = require('gulp-sourcemaps');
-// const imagemin = require('gulp-imagemin');
-// const webp = require('gulp-webp');
-// const webpHTML = require('gulp-webp-html');
-// const webpCSS = require('gulp-webp-css');
 
 // задачи по умолчанию при разработке и работе в черновых файлах
 gulp.task('server', function() {
@@ -51,7 +47,6 @@ gulp.task('serverdist', function() {
 
 gulp.task('html', function() {
     return gulp.src("src/*.html")
-        // .pipe(webpHTML())
         .pipe(htmlmin({
             collapseWhitespace: true,
             removeComments: true
@@ -61,7 +56,6 @@ gulp.task('html', function() {
 
 gulp.task('css', function() {
     return gulp.src("src/css/*.css")
-        // .pipe(webpCSS())
         .pipe(cleanCSS({level: {1: { specialComments: 0}}}))
         .pipe(gulp.dest("dist/css"));
 });
@@ -71,34 +65,18 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest("dist/js"));
 });
 
-// gulp.task('fonts', function() {
-//     return gulp.src("src/fonts/**/*")
-//         .pipe(gulp.dest("dist/fonts"));
-// });
-
-// gulp.task('icons', function() {
-//     return gulp.src(["src/icons/**/*", "!src/icons/favicon/*"])
-//         .pipe(webp())
-//         .pipe(gulp.dest("dist/icons"))
-//         .pipe(gulp.src("src/icons/**/*"))
-//         .pipe(gulp.dest("dist/icons"));
-// });
+gulp.task('assets', function() {
+    return gulp.src("src/assets/**/*")
+        .pipe(gulp.dest("dist/assets"));
+});
 
 gulp.task('mailer', function() {
     return gulp.src("src/mailer/**/*")
         .pipe(gulp.dest("dist/mailer"));
 });
 
-// gulp.task('images', function() {
-//     return gulp.src("src/img/**/*")
-//         .pipe(webp())
-//         .pipe(gulp.dest("dist/img"))
-//         .pipe(gulp.src("src/img/**/*"))
-//         .pipe(imagemin())
-//         .pipe(gulp.dest("dist/img"));
-// });
 
 // задача разработка
 gulp.task('default', gulp.parallel('watch', 'server', 'styles'));
 // задача на деплой проекта
-gulp.task('deploy', gulp.parallel('html', 'css', 'scripts', 'mailer', 'serverdist'));
+gulp.task('deploy', gulp.parallel('html', 'css', 'scripts', 'assets', 'serverdist'));

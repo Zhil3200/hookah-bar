@@ -9,3 +9,30 @@
         left: 100%;
     }
 }
+
+@keyframes zag {
+    0% {
+        transform: rotate(0);
+    }
+    10% {
+        transform: rotate(20deg);
+    }
+    20% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        rotate: 0deg;
+    }
+    50% {
+        rotate: 180deg;
+    }
+    100% {
+        rotate: 360deg;
+    }
+}

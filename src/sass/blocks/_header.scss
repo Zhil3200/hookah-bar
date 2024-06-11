@@ -1,10 +1,10 @@
 .header {
-    // position: sticky;
-    top: 0;
+    top: -50px;
     padding-block: 33px;
     display: flex;
     align-items: center;
     z-index: 100;
+    transition-duration: var(--transition-duration);
     &__overlay {
         width: 100%;
         transition-duration: var(--transition-duration);
@@ -51,27 +51,15 @@
     }
     &__phone {
         margin-left: auto;
-        padding-left: 47px;
-        position: relative;
-        line-height: 1;
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: -7px;
-            width: 40px;
-            aspect-ratio: 1;
-            background: url('../assets/icons/phone-call.png') center / contain no-repeat;
-        }
-        &-link {
-            display: block;
-            color: #621dc4;
-            margin-bottom: 9px;
-            text-shadow: var(--text-shadow);
-          }
-        &-descr {
-            display: block;
-        }
+    }
+    &__sticky {
+        position: fixed;
+        padding-block: 15px;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-color: var(--color-dark);
+        transition-duration: var(--transition-duration);
     }
 }
   
